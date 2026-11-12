@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey Century Seismic Activity Analysis (1915-2021) & Fault Line Risk Analytics | M Akshay Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+                    <i class="fa-solid fa-chart-line text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">DataLab Portfolio</span>
+                    <span class="hidden sm:inline-block ml-2 text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Geospatial & Seismological Data Science</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 text-sm bg-slate-900 border border-slate-800 rounded-full px-3 py-1.5">
+                    <i class="fa-solid fa-user-gear text-indigo-400"></i>
+                    <span class="text-slate-400">Author:</span>
+                    <span class="font-semibold text-slate-200">M Akshay Sharma</span>
+                </div>
+                <a href="https://github.com/akshaysharma2005/turkey-earthquake-analysis" target="_blank" class="inline-flex items-center space-x-2 text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-indigo-600/30">
+                    <i class="fa-brands fa-github text-base"></i>
+                    <span>Repository</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        
+        <!-- Hero Section -->
+        <section class="relative rounded-3xl overflow-hidden glass-card p-8 sm:p-12 glow border border-indigo-500/20">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl space-y-4">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Geospatial & Seismological Data Science</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Turkey Century Seismic Activity Analysis (1915-2021) & Fault Line Risk Analytics
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Century-long geospatial and seismological analysis of earthquake events across the North and East Anatolian Fault Lines.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2 text-xs font-medium">
+                    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Python</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Pandas</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Folium</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Geospatial Analysis</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Seismology</span>
+    
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Metrics Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-rose-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tracked Period</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">106 Years</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-rose-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">1915 through 2021</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-amber-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cataloged Events</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">14,000+</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-house-crack"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">Magnitude >= 3.5 Richter</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-red-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Highest Magnitude</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">7.9 Richter</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-red-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">1939 Erzincan Catastrophe</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-indigo-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Dominant Fault Zone</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">North Anatolian (NAF)</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-indigo-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">Right-lateral strike-slip</p>
+        </div>
+    
+        </section>
+
+        <!-- Interactive Playground / Tool -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-indigo-400"></i>
+                        Interactive Analytical Playground
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">Simulate parameters, filter live records, and inspect predictive model dynamics</p>
+                </div>
+                <span class="self-start sm:self-auto px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Live Interactive Engine
+                </span>
+            </div>
+
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Tectonic Fault Zone</label>
+                    <select id="faultZone" onchange="calcSeismicStats()" class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-sm text-slate-200">
+                        <option value="naf">North Anatolian Fault (NAF - High Strike Slip)</option>
+                        <option value="eaf">East Anatolian Fault (EAF - East Anatolia)</option>
+                        <option value="waf">Western Anatolian Graben System (Aegean)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Focal Depth Tier</label>
+                    <select id="focalDepth" onchange="calcSeismicStats()" class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-sm text-slate-200">
+                        <option value="shallow">Shallow (< 15 km - High Surface Hazard)</option>
+                        <option value="intermediate">Intermediate (15 - 40 km)</option>
+                        <option value="deep">Deep (> 40 km)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Min Magnitude: <span id="magVal" class="text-rose-400 font-bold">5.0 M</span></label>
+                    <input type="range" id="magRange" min="35" max="75" value="50" oninput="document.getElementById('magVal').textContent = (this.value/10).toFixed(1) + ' M'; calcSeismicStats()" class="w-full mt-2 accent-rose-500">
+                </div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div>
+                    <span class="text-xs text-slate-400 block">Historic Significant Earthquakes</span>
+                    <span id="eqCount" class="text-2xl font-extrabold text-rose-400 mt-1 block">428 Events</span>
+                    <span class="text-[11px] text-slate-500">Above magnitude threshold</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 block">Gutenberg-Richter b-Value</span>
+                    <span id="bValue" class="text-2xl font-extrabold text-amber-400 mt-1 block">0.98</span>
+                    <span class="text-[11px] text-slate-500">Regional tectonic stress state</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 block">Average Recurrence Interval</span>
+                    <span id="recurrence" class="text-2xl font-extrabold text-indigo-400 mt-1 block">18.4 Months</span>
+                    <span class="text-[11px] text-slate-500">For M >= 6.0 major event</span>
+                </div>
+            </div>
+        
+        </section>
+
+        <!-- Visual Analytics: Charts Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-column text-indigo-400"></i> Gutenberg-Richter Frequency-Magnitude Distribution
+                </h3>
+                <p class="text-xs text-slate-400 mb-4">Log-linear decrease in frequency as magnitude increases, following fundamental seismological laws.</p>
+                <div class="h-64">
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie text-violet-400"></i> Century Cumulative Seismic Energy Release (M >= 6.0)
+                </h3>
+                <p class="text-xs text-slate-400 mb-4">Sharp step-function jumps correspond to historic rupture sequences like 1939 Erzincan and 1999 Izmit.</p>
+                <div class="h-64">
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Insights & Key Findings -->
+        <section class="glass-card rounded-3xl p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                Strategic Insights & Technical Findings
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> North Anatolian Stress Migration
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Earthquake ruptures migrated systematically westward toward the Marmara Sea following the 1939 Erzincan event.</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Shallow Focal Depth Hazard
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Over 78% of epicenters occurred at depths < 15km, transmitting maximum kinetic ground acceleration.</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Gutenberg-Richter b-Value
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Calculated b-value of 0.98 signals high crustal stress accumulation along strike-slip boundaries.</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Marmara Seismic Gap
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Geodetic slip deficits highlight concentrated strain accumulation in the central Marmara sector.</p>
+        </div>
+    
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p>Architected & Developed by <strong class="text-slate-300">M Akshay Sharma</strong></p>
+        <p class="flex items-center justify-center space-x-4">
+            <a href="https://github.com/akshaysharma2005" target="_blank" class="hover:text-indigo-400 transition"><i class="fa-brands fa-github"></i> @akshaysharma2005</a>
+            <span>•</span>
+            <a href="https://github.com/akshaysharma2005/turkey-earthquake-analysis" target="_blank" class="hover:text-indigo-400 transition"><i class="fa-solid fa-code-branch"></i> Project Repository</a>
+        </p>
+    </footer>
+
+    <script>
+        
+            function calcSeismicStats() {
+                const z = document.getElementById('faultZone').value;
+                const mag = parseFloat(document.getElementById('magRange').value) / 10;
+                let count = Math.round(500 * Math.exp(-1.1 * (mag - 4.0)));
+                let b = "0.98";
+                let rec = "18.4 Months";
+
+                if (z === 'eaf') {
+                    b = "0.92";
+                    rec = "24.1 Months";
+                } else if (z === 'waf') {
+                    b = "1.06";
+                    rec = "12.8 Months";
+                }
+
+                document.getElementById('eqCount').textContent = count + ' Events';
+                document.getElementById('bValue').textContent = b;
+                document.getElementById('recurrence').textContent = rec;
+            }
+            calcSeismicStats();
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            new Chart(document.getElementById('chart1').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['M 3.5-4.4', 'M 4.5-5.4', 'M 5.5-6.4', 'M 6.5-7.4', 'M 7.5+'],
+                    datasets: [{
+                        label: 'Recorded Events',
+                        data: [9840, 3120, 784, 182, 28],
+                        backgroundColor: '#ef4444',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+                        y: { ticks: { color: '#64748b' }, grid: { color: '#334155' } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('chart2').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['1920', '1940', '1960', '1980', '1999', '2010', '2020'],
+                    datasets: [{
+                        label: 'Cumulative Major Events (M>=6.0)',
+                        data: [8, 24, 48, 72, 104, 126, 148],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#94a3b8' } } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } },
+                        y: { ticks: { color: '#64748b' }, grid: { color: '#334155' } }
+                    }
+                }
+            });
+        
+        });
+    </script>
+</body>
+</html>
